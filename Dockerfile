@@ -45,14 +45,14 @@ RUN apt-get install -y --no-install-recommends \
 
 RUN locale-gen en_US.UTF-8
 
-ARG proj_version=7.0.0RC1
+ARG proj_version=7.0.0
 ENV PROJ_VERSION=$proj_version
 # ENV LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 
 RUN wget http://download.osgeo.org/proj/proj-${PROJ_VERSION}.tar.gz \
   && tar zxf proj-*tar.gz \
   && cd proj* \
-  && ./configure \
+  && ./configure --prefix=/opt/proj --datadir=/opt/share \
   && make -j2\
   && make install \
   && cd .. \
