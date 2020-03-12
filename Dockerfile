@@ -60,7 +60,7 @@ RUN wget http://download.osgeo.org/proj/proj-${PROJ_VERSION}.tar.gz \
   && ldconfig
 
 # install proj-datumgrid:
-RUN cd /usr/local/share/proj \
+RUN cd /opt/share/proj \
   && wget http://download.osgeo.org/proj/proj-datumgrid-latest.zip \
   && unzip -o proj-datumgrid*zip \
   && rm proj-datumgrid*zip \
