@@ -94,7 +94,7 @@ ENV GDAL_VERSION_NAME=$gdal_version
 RUN wget http://download.osgeo.org/gdal/${GDAL_VERSION}/gdal-${GDAL_VERSION_NAME}.tar.gz \
   && tar -xf gdal-${GDAL_VERSION_NAME}.tar.gz \
   && cd gdal* \
-  && ./configure -with-geos=yes\
+  && ./configure -with-geos=yes --with-proj=/usr/local/\
   && make -j2\
   && make install \
   && cd .. \
