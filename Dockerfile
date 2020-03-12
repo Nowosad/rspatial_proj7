@@ -27,6 +27,7 @@ RUN apt-get update \
 	libhdf4-alt-dev \
 	libhdf5-dev \
 	netcdf-bin \
+	libtiff5-dev \
 	postgis \
 	tk-dev
 
